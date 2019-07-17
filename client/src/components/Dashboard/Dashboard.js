@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from "react-bootstrap";
-
+import Ajouter from "./ajouter";
 import API from '../../utils/API';
 
 export class Dashboard extends React.Component {
@@ -15,15 +15,11 @@ export class Dashboard extends React.Component {
     render() {
         return(
             <div className="Dashboard">
-                <h1>Dashboard</h1>
-                <Button
-                onClick={this.disconnect}
-                block
-                bsSize="large"
-                type="submit"
-                >
-                Se déconnecter
+               
+                <Button id='deconect' onClick={this.disconnect} blockbsSize="large"type="submit">
+                Deconnecter
                 </Button>
+                <Ajouter/>
             </div>
         )
     }

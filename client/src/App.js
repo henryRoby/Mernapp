@@ -3,7 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import { Dashboard } from './components/Dashboard/Dashboard.js';
 import { Login } from './components/Login/Login.js';
 import { Signup } from './components/Signup/Signup.js';
-import { PrivateRoute } from './components/Privateroute/PrivateRoute';
+import { PrivateRoute } from './components/PrivateRoute.js';
+import Navbar from './components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './App.css';
 
 class App extends Component {
@@ -11,6 +14,7 @@ class App extends Component {
         return (
         <div className="App">
             <div className="App-content">
+                         <Navbar />
                 <Switch>  
                     <Route exact path="/" component={Login}/>
                     <Route exact path ="/signup" component={Signup}/>
