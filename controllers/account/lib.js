@@ -62,9 +62,6 @@ function signup(req, res) {
         })
     }
 }
-
-
-
 function login(req, res) {
     if (!req.body.email || !req.body.password) {
         //Le cas où l'email ou bien le password ne serait pas soumit ou nul
@@ -79,17 +76,20 @@ function login(req, res) {
                 res.status(500).json({
                     "text": "Erreur interne"
                 })
-            } else if (!user) {
+            }
+            else if(!user){
                 res.status(401).json({
                     "text": "L'utilisateur n'existe pas"
                 })
-            } else {
+            }
+            else {
                 if (user.authenticate(req.body.password)) {
                     res.status(200).json({
                         "token": user.getToken(),
                         "text": "Authentification réussi"
                     })
-                } else {
+                }
+                else{
                     res.status(401).json({
                         "text": "Mot de passe incorrect"
                     })
@@ -98,7 +98,6 @@ function login(req, res) {
         })
     }
 }
-
 //On exporte nos deux fonctions
 
 exports.login = login;
